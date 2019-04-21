@@ -42,7 +42,7 @@ function moveRobot(input) {
          cleanDirt();
      });
  }
- 
+
  function cleanDirt() {
     if(robot.x === dirtPatch.x && robot.y === dirtPatch.y) {
         dirtPatchesCleaned++;
@@ -51,3 +51,7 @@ function moveRobot(input) {
     }   
     //console.log(robot.x, robot.y);
 }
+
+moveRobot(directions);
+console.log(robot);
+console.log(dirtPatchesCleaned);
