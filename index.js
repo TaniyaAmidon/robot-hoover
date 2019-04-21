@@ -17,3 +17,29 @@ const dirts =  array.slice(2,array.length-1).forEach( dirt => {
 const directions = array[array.length -1];
 let  dirtPatchesCleaned = 0
 console.log(dirts);
+
+function moveRobot(input) {
+    input.split("").forEach(letter => {
+         switch(letter) {
+             case "N":
+              robot.y != room.x ? robot.y += 1 : robot.y;
+             break;
+             case "E":
+            // robot.x += 1;
+             robot.x != room.y  ? robot.x += 1 : robot.x;
+ 
+             break;
+             case "S":
+            // robot.y -= 1;
+            robot.y != room.x ? robot.y -= 1 : robot.y;
+             break;
+             case "W":
+             //robot.x -= 1;
+             robot.x != room.y  ? robot.x -= 1 : robot.x;
+ 
+             break;
+         }    
+         cleanDirt();
+     });
+ }
+ 
