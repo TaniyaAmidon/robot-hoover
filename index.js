@@ -43,3 +43,11 @@ function moveRobot(input) {
      });
  }
  
+ function cleanDirt() {
+    if(robot.x === dirtPatch.x && robot.y === dirtPatch.y) {
+        dirtPatchesCleaned++;
+        dirtPatch.x = 0;
+        dirtPatch.y = 0;     
+    }   
+    //console.log(robot.x, robot.y);
+}
