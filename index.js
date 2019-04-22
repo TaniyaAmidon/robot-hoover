@@ -1,6 +1,10 @@
 const fs = require('fs');
 
-const inputData = fs.readFileSync('input.txt').toString().split("\n");
+// For the purpose of this exeresice, as the input.txt file is small, 
+// I have read the whole file in memory.
+// For production use, I would read the file line by line
+const filePath = process.argv[2];
+const inputData = fs.readFileSync(filePath).toString().split("\n");
 
 const room = {x: parseInt(inputData[0].split(" ")[0]), y: parseInt(inputData[0].split(" ")[1])};
 const robot = {x: parseInt(inputData[1].split(" ")[0]), y: parseInt(inputData[1].split(" ")[1])};
