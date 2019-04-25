@@ -50,5 +50,6 @@ const cleanDirt = dirtPatches => {
 };
 
 moveRobot(directions);
+
 console.log(robot);
 console.log(dirtPatchesCleaned);
