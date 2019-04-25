@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-// For the purpose of this exeresice, as the input.txt file is small, 
+// For the purpose of this exeresice, as the input.txt file is small,
 // I have read the whole file in memory.
 // For production use, I would read the file line by line
 const filePath = process.argv[2];
@@ -23,30 +23,30 @@ const moveRobot = directions => {
     directions.split("").forEach(direction => {
         switch(direction) {
             case "N":
-            robot.y != room.x ? robot.y += 1 : robot.y;
+            robot.y != room.y ? robot.y += 1 : robot.y;
             break;
             case "E":
-            robot.x != room.y  ? robot.x += 1 : robot.x;
+            robot.x != room.x  ? robot.x += 1 : robot.x;
             break;
             case "S":
-            robot.y != room.x ? robot.y -= 1 : robot.y;
+            robot.y != room.y ? robot.y -= 1 : robot.y;
             break;
-            case "W": 
-            robot.x != room.y  ? robot.x -= 1 : robot.x;
+            case "W":
+            robot.x != room.x ? robot.x -= 1 : robot.x;
             break;
-        }    
-        cleanDirt(dirtPatches); 
+        }
+        cleanDirt(dirtPatches);
     });
 };
 
 const cleanDirt = dirtPatches => {
     dirtPatches.forEach(dirtPatch => {
         if(robot.x === dirtPatch.x && robot.y === dirtPatch.y) {
-            dirtPatchesCleaned++; 
+            dirtPatchesCleaned++;
             dirtPatch.x = null;
-            dirtPatch.y = null;     
-        }  
-    });   
+            dirtPatch.y = null;
+        }
+    });
 };
 
 moveRobot(directions);
